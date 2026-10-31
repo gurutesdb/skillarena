@@ -24,6 +24,8 @@ npm run build     # production build, which must pass before calling a phase don
 npm run preview
 ```
 
+**Deployment:** GitHub Pages via `.github/workflows/deploy.yml` on every push to `main` → https://gurutesdb.github.io/skillarena/. The build uses `BASE_PATH=/skillarena/` (Vite `base` + router `basename`), and `404.html` is a copy of `index.html` so deep links survive refresh. Keep internal links router-relative (`<Link to="/x">`), never hard-coded `/x` hrefs.
+
 ## Architecture
 
 ```
